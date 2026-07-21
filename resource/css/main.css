@@ -412,6 +412,42 @@ button {
   font-weight: 650;
 }
 
+.share-wrap {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 4.8rem;
+}
+.share-wrap .btn {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  border-radius: 0.8rem;
+  border: none;
+  background: #fff;
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+  box-shadow: 0 0.6rem 1.8rem rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.share-wrap .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+}
+.share-wrap .btn img {
+  width: 2rem;
+  height: 2rem;
+}
+
 .camp-footer {
   padding: 12px 0 40px;
   color: #8e8e93;

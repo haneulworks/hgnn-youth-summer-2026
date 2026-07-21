@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="2026 향기나는교회 청소년부 하계수련회 일정 안내">
+
+  <meta property="og:title" content="2026 향기나는교회 청소년부 하계수련회" />
+<meta property="og:type" content="website">
+<meta property="og:image" content="./resource/img/og.jpg">
+<meta property="og:url" content="https://haneulworks.github.io/hgnn-youth-summer-2026/">
+<meta property="og:description" content="2026 향기나는교회 청소년부 하계수련회 일정과 예배 순서를 확인하세요." />
+
   <title>2026 향기나는교회 청소년부 하계수련회</title>
   <link rel="stylesheet" href="./resource/css/font.css">
   <link rel="stylesheet" href="./resource/css/reset.css">
@@ -248,6 +255,11 @@
             <footer>마태복음 16:16 · 3일의 여정을 마무리하는 우리의 고백</footer>
           </blockquote>
         </section>
+        <!-- 주보 공유 -->
+        <section class="share-wrap btn-wrap txt1 keep-all-pretty">
+            <button type="button" id="kakaotalk-sharing-btn" class="btn btn-full"><img src="./resource/img/icon-kakao.png" alt="카카오톡 아이콘" />카카오톡으로 공유</button>
+            <button type="button" class="btn btn-full copyText" data-copy="https://haneulworks.github.io/hgnn-youth-weekly/"><img src="./resource/img/icon-link.png" alt="링크 아이콘" /> 온라인 주보 링크 복사하기</button>
+        </section>
       </div>
     </main>
 
@@ -264,4 +276,23 @@
     </footer>
   </div>
 </body>
+
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.7/kakao.min.js" integrity="sha384-tJkjbtDbvoxO+diRuDtwRO9JXR7pjWnfjfRn5ePUpl7e7RJCxKCwwnfqUAdXh53p" crossorigin="anonymous"></script>
+
+<script>
+  Kakao.init('5c8e276ac66a278e925960b664548016');  // 사용하려는 앱의 JavaScript 키 입력
+</script>
+
+<script>
+	document.getElementById('kakaotalk-sharing-btn').addEventListener('click', function () {
+		Kakao.Share.sendCustom({
+			templateId: 135518, // 숫자만 입력
+			templateArgs: {
+				FW: "향기나는교회 청소년부",
+				date: "2026.01.11"
+			}
+		});
+	});
+</script>
+
 </html>
