@@ -44,4 +44,26 @@ document.addEventListener("DOMContentLoaded", () => {
   daySections.forEach((section) => observer.observe(section));
 
   setActiveLink(daySections[0].id);
+
+
+  /* =====================
+     링크 복사 버튼
+  ===================== */
+  const copyBtn = document.querySelector('.copyText');
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      const text = this.dataset.copy || window.location.href;
+
+      navigator.clipboard.writeText(text).then(() => {
+        this.classList.add('copied');
+        this.innerText = '주소가 복사되었습니다';
+
+        setTimeout(() => {
+          this.innerText = '온라인 주보 주소 복사하기';
+          this.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  }
 });
