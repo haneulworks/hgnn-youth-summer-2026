@@ -67,9 +67,10 @@ button {
 .back-link,
 .worship-nav a {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 48px;
   padding: 0 17px;
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 999px;
@@ -83,6 +84,16 @@ button {
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.back-link small,
+.worship-nav a small {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+.back-link[aria-current=page] small,
+.worship-nav a[aria-current=page] small {
+  opacity: 0.8;
 }
 .back-link:hover, .back-link:focus-visible,
 .worship-nav a:hover,
@@ -540,6 +551,7 @@ button {
     gap: 22px;
   }
   .bulletin__speaker {
+    margin-top: -16px;
     text-align: left;
     white-space: normal;
   }
@@ -578,7 +590,7 @@ button {
     gap: 7px;
   }
   .worship-nav a {
-    min-height: 42px;
+    min-height: 44px;
     padding: 0 8px;
     font-size: 12px;
     white-space: normal;
