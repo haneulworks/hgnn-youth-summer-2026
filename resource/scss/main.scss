@@ -258,7 +258,9 @@ button {
       box-shadow: 0 10px 26px rgba(255, 149, 0, 0.25);
     }
 
-    .schedule-item__staff,
+    .schedule-item__staff{
+      color: $text-secondary;
+    }
     .schedule-item__link {
       color: $orange;
     }
@@ -280,7 +282,9 @@ button {
       box-shadow: 0 10px 26px rgba(88, 86, 214, 0.25);
     }
 
-    .schedule-item__staff,
+    .schedule-item__staff{
+      color: $text-secondary;
+    }
     .schedule-item__link {
       color: $purple;
     }
@@ -368,7 +372,7 @@ button {
   &__body {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(170px, 0.8fr) minmax(230px, 1.4fr) auto;
+    grid-template-columns: minmax(170px, 0.9fr) minmax(230px, 1.5fr) minmax(100px, 0.4fr);
     align-items: center;
     gap: 18px;
     min-height: 86px;
@@ -399,7 +403,7 @@ button {
   }
 
   &__staff {
-    color: $primary;
+    color: $text-secondary;
     font-size: 14px;
     font-weight: 750;
     white-space: nowrap;
@@ -416,7 +420,7 @@ button {
   &--worship {
     .schedule-item__body {
       padding-left: 28px;
-      padding-right: 58px;
+      padding-right: 34px;
       box-shadow: 0 7px 26px rgba(0, 122, 255, 0.09);
       transition:
         transform 0.22s ease,
