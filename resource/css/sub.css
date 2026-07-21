@@ -194,7 +194,7 @@ button {
   max-width: 900px;
   margin: 20px 0 0;
   color: #fff;
-  font-size: clamp(38px, 6vw, 68px);
+  font-size: clamp(38px, 6vw, 48px);
   font-weight: 850;
   line-height: 1.06;
   letter-spacing: -0.055em;
@@ -240,6 +240,18 @@ button {
 .bulletin__sermon-label {
   font-size: 15px;
   font-weight: 500;
+}
+
+.bulletin__sermon-title {
+  max-width: 900px;
+  margin-top: 8px;
+  margin-bottom: 2px;
+  color: #fff;
+  font-size: clamp(20px, 4vw, 28px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  word-break: keep-all;
 }
 
 .bulletin__speaker {
@@ -614,7 +626,7 @@ button {
   }
   .bulletin__title {
     margin-top: 16px;
-    font-size: clamp(34px, 9vw, 46px);
+    font-size: clamp(28px, 6vw, 36px);
   }
   .bulletin__meta {
     display: grid;
