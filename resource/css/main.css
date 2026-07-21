@@ -1,0 +1,587 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: #f2f2f7;
+  color: #1c1c1e;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.inner {
+  width: min(1120px, 100% - 40px);
+  margin: 0 auto;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 16px;
+  z-index: 1000;
+  padding: 12px 18px;
+  border-radius: 0 0 12px 12px;
+  background: #1c1c1e;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-110%);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Hero */
+.camp-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 76px 0 56px;
+  color: #1c1c1e;
+}
+.camp-hero::before, .camp-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(12px);
+  pointer-events: none;
+}
+.camp-hero::before {
+  top: -180px;
+  right: -100px;
+  width: 480px;
+  height: 480px;
+  background: rgba(0, 122, 255, 0.18);
+}
+.camp-hero::after {
+  bottom: -180px;
+  left: -130px;
+  width: 400px;
+  height: 400px;
+  background: rgba(88, 86, 214, 0.12);
+}
+.camp-hero .inner {
+  position: relative;
+  z-index: 1;
+  padding: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 36px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+}
+.camp-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(0, 122, 255, 0.1);
+  color: #007aff;
+  font-size: 14px;
+  font-weight: 800;
+}
+.camp-hero__title {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  word-break: keep-all;
+}
+.camp-hero__verse {
+  margin: 20px 0 42px;
+  color: #636366;
+  font-size: 19px;
+  font-weight: 650;
+}
+.camp-hero__info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+.camp-hero__info div {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(60, 60, 67, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+.camp-hero__info dt {
+  margin-bottom: 5px;
+  color: #8e8e93;
+  font-size: 13px;
+  font-weight: 700;
+}
+.camp-hero__info dd {
+  margin: 0;
+  color: #1c1c1e;
+  font-size: 16px;
+  font-weight: 750;
+  word-break: keep-all;
+}
+
+/* Sticky navigation */
+.day-nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 10px 0;
+  background: rgba(242, 242, 247, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.day-nav .inner {
+  display: flex;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  background: rgba(118, 118, 128, 0.12);
+}
+.day-nav a {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #636366;
+  font-size: 15px;
+  font-weight: 750;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.day-nav a:hover, .day-nav a:focus-visible {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  color: #1c1c1e;
+  outline: none;
+  transform: translateY(-1px);
+}
+.day-nav a:active {
+  transform: scale(0.98);
+}
+.day-nav a.active {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: #007aff;
+}
+
+.schedule-main {
+  padding: 58px 0 100px;
+}
+
+.day-section {
+  scroll-margin-top: 100px;
+}
+.day-section + .day-section {
+  margin-top: 100px;
+}
+.day-section--2 .day-heading__number {
+  background: linear-gradient(145deg, #ffb340, #ff9500);
+  box-shadow: 0 10px 26px rgba(255, 149, 0, 0.25);
+}
+.day-section--2 .schedule-item__staff,
+.day-section--2 .schedule-item__link {
+  color: #ff9500;
+}
+.day-section--2 .schedule-item--worship .schedule-item__body::before {
+  background: #ff9500;
+}
+.day-section--2 .schedule-item--worship .schedule-item__body::after {
+  color: #ff9500;
+}
+.day-section--3 .day-heading__number {
+  background: linear-gradient(145deg, #6f6df0, #5856d6);
+  box-shadow: 0 10px 26px rgba(88, 86, 214, 0.25);
+}
+.day-section--3 .schedule-item__staff,
+.day-section--3 .schedule-item__link {
+  color: #5856d6;
+}
+.day-section--3 .schedule-item--worship .schedule-item__body::before {
+  background: #5856d6;
+}
+.day-section--3 .schedule-item--worship .schedule-item__body::after {
+  color: #5856d6;
+}
+
+.day-heading {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.day-heading__number {
+  display: grid;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #2492ff, #007aff);
+  box-shadow: 0 10px 26px rgba(0, 122, 255, 0.23);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+}
+.day-heading h2 {
+  margin: 0;
+  font-size: clamp(29px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+.day-heading p {
+  margin: 5px 0 0;
+  color: #8e8e93;
+  font-size: 16px;
+  font-weight: 550;
+}
+
+.schedule-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 10px;
+}
+.schedule-item__time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 86px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  color: #007aff;
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.schedule-item__body {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(170px, 0.8fr) minmax(230px, 1.4fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-height: 86px;
+  padding: 20px 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  color: inherit;
+  text-decoration: none;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.schedule-item__title {
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+.schedule-item__desc {
+  margin: 0;
+  color: #636366;
+  font-size: 15px;
+  word-break: keep-all;
+}
+.schedule-item__staff {
+  color: #007aff;
+  font-size: 14px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+.schedule-item__link {
+  grid-column: 1/-1;
+  display: none;
+  color: #007aff;
+  font-size: 13px;
+  font-weight: 750;
+}
+.schedule-item--worship .schedule-item__body {
+  padding-left: 28px;
+  padding-right: 58px;
+  box-shadow: 0 7px 26px rgba(0, 122, 255, 0.09);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+.schedule-item--worship .schedule-item__body::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 0;
+  width: 5px;
+  border-radius: 0 999px 999px 0;
+  background: #007aff;
+}
+.schedule-item--worship .schedule-item__body::after {
+  content: "›";
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  color: #007aff;
+  font-family: Arial, sans-serif;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+  transform: translateY(-52%);
+}
+.schedule-item--worship .schedule-item__body:hover, .schedule-item--worship .schedule-item__body:focus-visible {
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(0, 122, 255, 0.14);
+  outline: none;
+  transform: translateY(-3px);
+}
+.schedule-item--worship .schedule-item__body:active {
+  transform: scale(0.99);
+}
+.schedule-item--worship .schedule-item__title {
+  color: #1c1c1e;
+  font-weight: 800;
+}
+
+/* Closing verse */
+.closing-verse {
+  position: relative;
+  overflow: hidden;
+  margin: 48px 0 0;
+  padding: 48px 42px;
+  border-radius: 30px;
+  background: radial-gradient(circle at 90% 0%, rgba(255, 255, 255, 0.18), transparent 32%), linear-gradient(145deg, #1c1c1e, #343438);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+  color: #fff;
+  text-align: center;
+}
+.closing-verse::before {
+  content: "“";
+  position: absolute;
+  top: -28px;
+  left: 22px;
+  color: rgba(255, 255, 255, 0.08);
+  font-family: Georgia, serif;
+  font-size: 170px;
+  line-height: 1;
+}
+.closing-verse p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(20px, 3vw, 27px);
+  font-weight: 650;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+.closing-verse footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.camp-footer {
+  padding: 12px 0 40px;
+  color: #8e8e93;
+  text-align: center;
+}
+.camp-footer .inner {
+  padding-top: 28px;
+  border-top: 1px solid rgba(60, 60, 67, 0.1);
+}
+.camp-footer__title {
+  margin: 0;
+  color: #636366;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.camp-footer__copyright {
+  display: block;
+  margin-top: 7px;
+  color: #8e8e93;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .camp-hero .inner {
+    padding: 36px;
+  }
+  .camp-hero__info {
+    grid-template-columns: 1fr;
+  }
+  .schedule-item {
+    grid-template-columns: 130px minmax(0, 1fr);
+  }
+  .schedule-item__body {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .schedule-item__link {
+    display: block;
+    margin-top: 4px;
+  }
+}
+@media (max-width: 640px) {
+  .inner {
+    width: min(100% - 28px, 1120px);
+  }
+  .camp-hero {
+    padding: 28px 0 34px;
+  }
+  .camp-hero .inner {
+    padding: 24px 18px;
+    border-radius: 28px;
+  }
+  .camp-hero__eyebrow {
+    margin-bottom: 15px;
+    font-size: 13px;
+  }
+  .camp-hero__title {
+    font-size: clamp(34px, 12vw, 48px);
+  }
+  .camp-hero__verse {
+    margin: 16px 0 30px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .camp-hero__info {
+    gap: 8px;
+  }
+  .camp-hero__info div {
+    padding: 16px;
+    border-radius: 15px;
+  }
+  .camp-hero__info dd {
+    font-size: 15px;
+  }
+  .day-nav {
+    padding: 8px 0;
+  }
+  .day-nav .inner {
+    gap: 4px;
+    padding: 4px;
+    border-radius: 14px;
+  }
+  .day-nav a {
+    padding: 9px 8px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+  .schedule-main {
+    padding: 44px 0 70px;
+  }
+  .day-section {
+    scroll-margin-top: 84px;
+  }
+  .day-section + .day-section {
+    margin-top: 72px;
+  }
+  .day-heading {
+    gap: 13px;
+    margin-bottom: 20px;
+  }
+  .day-heading__number {
+    flex-basis: 54px;
+    width: 54px;
+    height: 54px;
+    border-radius: 17px;
+    font-size: 24px;
+  }
+  .day-heading h2 {
+    font-size: 28px;
+  }
+  .day-heading p {
+    margin-top: 3px;
+    font-size: 14px;
+  }
+  .schedule-list {
+    gap: 14px;
+  }
+  .schedule-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .schedule-item__time {
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 0 4px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #8e8e93;
+    font-size: 13px;
+    backdrop-filter: none;
+  }
+  .schedule-item__body {
+    min-height: 0;
+    padding: 18px 19px;
+    border-radius: 17px;
+  }
+  .schedule-item__title {
+    font-size: 18px;
+  }
+  .schedule-item__desc {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .schedule-item__staff {
+    margin-top: 3px;
+    font-size: 13px;
+  }
+  .schedule-item--worship .schedule-item__body {
+    padding: 19px 48px 19px 21px;
+  }
+  .schedule-item--worship .schedule-item__body::before {
+    top: 18px;
+    bottom: 18px;
+    width: 4px;
+  }
+  .schedule-item--worship .schedule-item__body::after {
+    right: 18px;
+    font-size: 30px;
+  }
+  .closing-verse {
+    margin-top: 36px;
+    padding: 38px 24px;
+    border-radius: 24px;
+  }
+  .closing-verse p {
+    font-size: 19px;
+    line-height: 1.7;
+  }
+}

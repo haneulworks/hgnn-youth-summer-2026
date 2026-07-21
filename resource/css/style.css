@@ -1,0 +1,375 @@
+@charset "UTF-8";
+#wrap {
+  max-width: 42rem;
+  margin: auto;
+  padding-bottom: 60px;
+}
+
+header,
+section {
+  margin: 0 1.6rem;
+  margin-top: 2.4rem;
+}
+
+/* 비전 배너 */
+.vision {
+  overflow: hidden;
+  margin: 0;
+  margin-bottom: 2.4rem;
+  border-radius: 0 0 2.4rem 2.4rem;
+}
+.vision img {
+  display: block;
+  width: 100%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+/* 헤더 */
+.header {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+}
+
+.week {
+  color: #545456;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+}
+
+/* 말씀 카드 */
+.hero {
+  padding: 2.4rem 2rem;
+  border-radius: 1.6rem;
+  background: #fff;
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.04);
+  background: linear-gradient(135deg, #FFE6C7, #FFB88C);
+  color: #5A2E00;
+}
+.hero-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+  opacity: 0.7;
+}
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+  margin: 1.4rem 0;
+}
+.hero-preacher {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+  opacity: 0.8;
+}
+
+/* 오늘의 말씀 */
+.verse {
+  padding: 2.4rem 2rem;
+  border-radius: 1.6rem;
+  background: #fff;
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.04);
+}
+.verse-label {
+  color: #ff8a3d;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+}
+.verse-text {
+  margin: 1.2rem 0;
+  color: #333333;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: -0.025em;
+  word-break: keep-all;
+  text-wrap-style: pretty;
+}
+.verse-ref {
+  color: #666666;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+  text-align: right;
+}
+
+/* 카드 */
+.card {
+  padding: 2.4rem 2rem;
+  border-radius: 1.6rem;
+  background: #fff;
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.04);
+}
+.card h2 {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+}
+
+/* 예배 순서 */
+.flow {
+  display: grid;
+  grid-row-gap: 1.2rem;
+  row-gap: 1.2rem;
+}
+.flow li {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  justify-content: space-between;
+  padding: 1.4rem 1.2rem;
+  background: #F5F6F9;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+}
+.flow .title {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.flow .title i {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 0;
+  background-color: #545456;
+  mask-image: url("../img/icon-file.svg");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  -webkit-mask-image: url("../img/icon-file.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+}
+.flow .who {
+  color: #545456;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+}
+
+/* 팝업 - 사도신경, 주기도문 */
+.pop-trigger {
+  cursor: pointer;
+}
+.pop-content {
+  cursor: auto;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.pop-content.active {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+}
+.pop-box {
+  overflow-y: auto;
+  position: relative;
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  flex-direction: column;
+  max-width: 42rem;
+  width: 90%;
+  max-height: 80vh;
+  padding: 2rem;
+  border-radius: 16px;
+  background: #fff;
+}
+.pop-box h3 {
+  flex-shrink: 0;
+}
+.pop-body {
+  overflow-y: auto;
+  flex: 1;
+  margin-top: 1.6rem;
+  padding-right: 0.5rem;
+  color: #333333;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.025em;
+  line-height: 1.6;
+  word-break: keep-all;
+  text-wrap-style: pretty;
+}
+.pop-close {
+  position: absolute;
+  top: 1.6rem;
+  right: 2rem;
+  background: none;
+  font-size: 2.8rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* 공지 */
+.notice li {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  align-items: center;
+  min-height: 4.4rem;
+  padding: 1rem 0.4rem;
+  border-bottom: 1px solid #DDDDDD;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+  word-break: keep-all;
+  text-wrap-style: pretty;
+}
+.notice li:last-child {
+  border-bottom: none;
+}
+
+/* 다음주 */
+.grid {
+  display: grid;
+  grid-row-gap: 1.2rem;
+  row-gap: 1.2rem;
+}
+.grid div {
+  padding: 1rem 1.2rem;
+  background: #F5F6F9;
+  border-radius: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+}
+.grid .title {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #545456;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: -0.025em;
+}
+
+.next-date {
+  color: #545456;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+}
+
+/* 공유하기 */
+.share-wrap {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2.4rem;
+}
+
+.btn {
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  border-radius: 0.8rem;
+  border: none;
+  background: #fff;
+  color: #1f2937;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: -0.025em;
+  box-shadow: 0 0.6rem 1.8rem rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.08);
+}
+.btn img {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* 지난 소식 보기 버튼 */
+.archive-btn {
+  background: #ffd2a8;
+  color: #6e3801;
+  box-shadow: 0 0.6rem 1.6rem rgba(255, 178, 122, 0.35);
+}
+
+.copyText.copied {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* 탑 버튼 */
+.to-top {
+  position: fixed;
+  right: 1.6rem;
+  bottom: 2.4rem;
+  -ms-display: flexbox; /* IE10 */ /* OLD iOS, Safari */ /* OLD Firefox */ /* IE10 Tweener */ /* NEW Chrome */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+  border: none;
+  background: #ffd2a8;
+  box-shadow: 0 0.8rem 15px rgba(255, 178, 122, 0.4);
+  cursor: pointer;
+  z-index: 10;
+}
+.to-top img {
+  width: 2.2rem;
+  height: 2.2rem;
+  filter: brightness(0) invert(1);
+}
+
+/* 푸터 */
+.footer {
+  margin-top: 4rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.025em;
+}
